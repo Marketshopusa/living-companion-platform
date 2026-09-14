@@ -1,0 +1,55 @@
+# Secrets and credentials — never commit
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+credentials.json
+secrets/
+**/secrets/
+id_rsa
+id_rsa.pub
+*.keystore
+
+# Local / OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*~
+
+# Editors
+.idea/
+.vscode/
+*.user
+*.suo
+.vs/
+
+# Dependencies and build
+node_modules/
+dist/
+build/
+out/
+target/
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+coverage/
+*.log
+
+# 3D / game engine local (when chosen)
+Library/
+Temp/
+Obj/
+Logs/
+MemoryCaptures/
+.godot/
+
+# Caches
+.cache/
+.turbo/
+.parcel-cache/

@@ -1,0 +1,24 @@
+# Gate 0: repository baseline (no product tests)
+name: gate-0-baseline
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  baseline:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Make baseline script executable
+        run: chmod +x scripts/check-baseline.sh
+      - name: Run Gate 0 baseline check
+        run: scripts/check-baseline.sh
+      - name: Fail if secret-like files are tracked
+        run: |
+          set -euo pipefail
+          if git ls-files | grep -E '(^|/)\.env$|(^|/)credentials\.json$|\.pem$'; then
+            echo "Secret-like tracked files are not allowed"
+            exit 1
+          fi
+          echo "No secret-like filenames tracked"

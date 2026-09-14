@@ -1,0 +1,31 @@
+# Privacy
+
+Baseline from [MASTER_BUILD_SPECIFICATION.md](MASTER_BUILD_SPECIFICATION.md) sections G, Points 05/42/48/53. Not a completed compliance program.
+
+## Data classes
+
+`PUBLIC / OPERATIONAL / PERSONAL / SENSITIVE / SECRET`
+
+## Principles
+
+- Minimization: collect only what a gate requires.
+- Deny-by-default for microphone, camera, screen, and location.
+- Vision and voice retention are configurable; prefer ephemeral processing.
+- Users must be able to control memory, voice, camera, screen, data, and history (when those features exist).
+- Deletion and export hooks are required by the spec; retention periods are **not** decided (see [DECISIONS.md](DECISIONS.md)).
+- Journal / inner life of the Companion must never be presented as a user fact.
+- Explicit clothing/memory preferences vs inferred: inferred has lower confidence and must be correctable.
+- Analytics (when added) must be consent-gated and separated from conversation content.
+- Default recommendation until approved otherwise: **do not train models on user data**.
+
+## Isolation tests (future gates)
+
+User A facts must never appear in User B context. Companion A memory must never appear in Companion B.
+
+## AI providers
+
+When adapters exist, vendor processing terms must be reviewed. Local stubs are the Gate 0 / early-dev default ($0).
+
+## Gate 0
+
+No user personal data is processed by application code. This repository currently holds specification and governance documents only.

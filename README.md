@@ -1,0 +1,60 @@
+# Living Companion Platform
+
+Persistent, embodied AI companions with identity, personality, memory, relationships, emotions, voice, body, wardrobe, environments, objects, actions, routines, bounded autonomy, and cross-device continuity.
+
+This is **not** a chatbot, a chatbot with an avatar, a mobile-only app, a static 3D character, or a library of scripted clips.
+
+## Governing specification
+
+[MASTER_BUILD_SPECIFICATION.md](MASTER_BUILD_SPECIFICATION.md) is the product and engineering source of truth. The **V3 Consolidated Product Directive** in that file is authoritative when earlier sections conflict on sequencing, embodiment, or Reference-first development.
+
+Do not edit `MASTER_BUILD_SPECIFICATION.md` to “simplify” requirements.
+
+## Current status
+
+**Gate 0 (repository governance)** is the first engineering gate. There is no production Companion Core, UI, 3D runtime, or paid provider integration yet.
+
+See [BUILD_PLAN.md](BUILD_PLAN.md) for gate status.
+
+## Repository layout
+
+```text
+apps/             # Future clients: iOS, Android, Windows, macOS, Web, Telegram
+core/             # Companion Core (canonical domain) — not started
+backend/          # APIs, persistence, sync — not started
+ai/               # Provider adapters and AI configuration — not started
+integrations/     # External channel adapters — not started
+cms/              # Character / AI / asset CMS — not started
+assets/           # Versioned licensed assets — not started
+infrastructure/   # Deploy/env definitions — not started
+scripts/          # Repo checks and tooling
+tests/            # Automated tests — not started
+docs/adr/         # Architecture decision records
+docs/evidence/    # Gate evidence
+docs/evaluations/ # AI evaluation artifacts
+docs/runbooks/    # Operations notes
+```
+
+## Environments
+
+Development starts at **$0** and **local-only**. See [docs/runbooks/environments.md](docs/runbooks/environments.md).
+
+## Documentation
+
+| Document | Role |
+| --- | --- |
+| [PRODUCT_SPEC.md](PRODUCT_SPEC.md) | Pointer to the master spec (does not fork requirements) |
+| [ARCHITECTURE.md](ARCHITECTURE.md) | Provisional architecture (not a silent lock) |
+| [DECISIONS.md](DECISIONS.md) | Open decisions requiring human approval |
+| [ACCEPTANCE_TESTS.md](ACCEPTANCE_TESTS.md) | Gate procedures |
+| [SECURITY.md](SECURITY.md) | Security baseline |
+| [PRIVACY.md](PRIVACY.md) | Privacy baseline |
+| [AGENTS.md](AGENTS.md) | Multi-agent working rules |
+| [CONTRIBUTING.md](CONTRIBUTING.md) | How to contribute |
+
+## Rules that never slip
+
+- Canonical Companion state lives in Companion Core / backend, not in one client.
+- LLM output is untrusted. It cannot execute privileged operations.
+- `NOT_STARTED → IN_PROGRESS → TESTING → PASS`. Failure is `FAIL → FIX → RETEST → PASS`.
+- Build one Reference Companion (and Reference Home / Wardrobe / Life) before scaling to 15 characters.
