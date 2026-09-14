@@ -8,20 +8,26 @@ Irreversible architecture, cost, privacy, security, legal/licensing, and product
 | --- | --- |
 | [ADR-000](docs/adr/000-no-stack-lock.md) | Gate 0 does not lock language, 3D runtime, database, auth, realtime transport, or paid providers. |
 
+## Locked in Gate 1
+
+| ID | Decision |
+| --- | --- |
+| [ADR-001](docs/adr/001-core-language-for-identity-contracts.md) | Gate 1 Core identity runtime: Python 3.x, pytest, JSON Schema, stdlib-first, in-memory + optional JSON file. Does **not** lock client languages, 3D, AI, database, cloud, realtime, or auth provider. |
+
 ## Open — require human approval
 
-1. Language/runtime for Core/backend and clients (monorepo vs polyglot).
+1. Language/runtime for **clients** and any Core beyond Gate 1 identity (monorepo vs polyglot). Gate 1 Core identity runtime is ADR-001 only.
 2. Real-time 3D engine (Unity, Unreal, Godot, custom, WebGPU, other).
 3. Canonical database and event bus.
-4. Authentication standard (e.g. OIDC) and MFA timeline.
+4. Authentication standard (e.g. OIDC) and MFA timeline. Gate 1 isolation uses **simulated principals**, not production accounts.
 5. Realtime transport (WebSocket, WebRTC, other).
 6. Local-first vs cloud LLM / STT / TTS for development after stubs.
-7. Age verification method and adult-content legal policy (required by spec Point 49; **not implemented in Gate 0**).
-8. Whether accounts/auth are pulled before full clients (recommended for isolation tests) despite V3 listing Accounts under Production Systems.
-9. Point 02 “all clients now” vs V3 platforms-later: contract simulators at Gate 1 vs real devices later.
+7. Age verification method and adult-content legal policy (required by spec Point 49; **not implemented in Gate 0 or Gate 1**).
+8. Whether accounts/auth are pulled before full clients (recommended for isolation tests) despite V3 listing Accounts under Production Systems. **Gate 1: simulated principals are sufficient for cross-tenant deny tests.**
+9. Point 02 “all clients now” vs V3 platforms-later: **Gate 1 uses contract simulators**; real devices later.
 10. Asset creation: in-house vs licensed; placeholder-vs-production policy.
 11. Telegram bot ownership and data-processing terms.
-12. Retention periods, export format, and whether user data is ever used for training (default recommendation: **never train on user data** unless approved).
+12. Retention periods, export format, and whether user data is ever used for training (default recommendation: **never train on user data** unless approved). Gate 1 `archived` is a status only.
 
 ## Contradictions recorded (not resolved here)
 

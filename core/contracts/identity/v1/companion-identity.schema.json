@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://living-companion.local/contracts/identity/v1/companion-identity",
+  "title": "CompanionIdentity",
+  "description": "Canonical Companion identity aggregate. Clients must not fork this model.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "companion_id",
+    "tenant_id",
+    "owner_user_id",
+    "created_at",
+    "updated_at",
+    "identity_schema_version",
+    "config_revision",
+    "created_by_actor",
+    "updated_by_actor",
+    "display_name",
+    "status",
+    "personality",
+    "configuration",
+    "metadata"
+  ],
+  "properties": {
+    "companion_id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Immutable. UUID string, lowercase."
+    },
+    "tenant_id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Immutable. Ownership tenant."
+    },
+    "owner_user_id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Immutable. User boundary only; not a User Model."
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Immutable RFC 3339 UTC."
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "identity_schema_version": {
+      "type": "integer",
+      "const": 1
+    },
+    "config_revision": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Optimistic concurrency token. Starts at 1."
+    },
+    "created_by_actor": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "updated_by_actor": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "display_name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 80,
+      "pattern": "^[^\\u0000-\\u001F\\u007F]+$"
+    },
+    "age_presentation": {
+      "type": ["string", "null"],
+      "maxLength": 32,
+      "description": "Optional presentation label. Not biometrics."
+    },
+    "gender_presentation": {
+      "type": ["string", "null"],
+      "maxLength": 64,
+      "description": "Optional presentation label. Not a 3D body."
+    },
+    "status": {
+      "type": "string",
+      "enum": ["active", "disabled", "archived"]
+    },
+    "personality": {
+      "$ref": "https://living-companion.local/contracts/identity/v1/personality-configuration"
+    },
+    "configuration": {
+      "$ref": "https://living-companion.local/contracts/identity/v1/companion-configuration"
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "source": {
+          "type": "string",
+          "enum": ["test", "manual", "system"]
+        },
+        "notes": {
+          "type": "string",
+          "maxLength": 256
+        }
+      }
+    }
+  }
+}

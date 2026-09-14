@@ -1,0 +1,9 @@
+﻿== Gate 1 identity contracts ==
+OK schema: core/contracts/identity/v1/companion-identity.schema.json
+OK schema: core/contracts/identity/v1/personality-configuration.schema.json
+OK schema: core/contracts/identity/v1/companion-configuration.schema.json
+OK schema: core/contracts/identity/v1/commands.schema.json
+OK schema: core/contracts/identity/v1/errors.schema.json
+.....................                                                    [100%]
+21 passed in 0.07s
+RESULT: PASS

@@ -1,0 +1,40 @@
+﻿== Gate 0 baseline check ==
+OK file: MASTER_BUILD_SPECIFICATION.md
+OK file: BUILD_PLAN.md
+OK file: ACCEPTANCE_TESTS.md
+OK file: ARCHITECTURE.md
+OK file: PRODUCT_SPEC.md
+OK file: DECISIONS.md
+OK file: SECURITY.md
+OK file: PRIVACY.md
+OK file: CONTRIBUTING.md
+OK file: AGENTS.md
+OK file: README.md
+OK file: .gitignore
+OK file: .env.example
+OK file: docs/adr/README.md
+OK file: docs/adr/000-no-stack-lock.md
+OK file: docs/runbooks/environments.md
+OK file: docs/evidence/gate-0/.gitkeep
+OK dir: apps
+OK dir: core
+OK dir: backend
+OK dir: ai
+OK dir: integrations
+OK dir: cms
+OK dir: assets
+OK dir: infrastructure
+OK dir: scripts
+OK dir: tests
+OK dir: docs/adr
+OK dir: docs/evidence
+OK dir: docs/evaluations
+OK dir: docs/runbooks
+OK dir: apps/ios
+OK dir: apps/android
+OK dir: apps/windows
+OK dir: apps/macos
+OK dir: apps/web
+OK dir: apps/telegram
+OK: no product source under ai/apps (core/backend identity code is allowed)
+RESULT: PASS

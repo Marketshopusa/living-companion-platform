@@ -1,0 +1,23 @@
+{
+  "command": "CreateCompanion",
+  "owner_user_id": "22222222-2222-4222-8222-222222222222",
+  "display_name": "Mira Solenne",
+  "device_id": "should-not-exist",
+  "personality": {
+    "personality_config_version": 1,
+    "humor": 0.72,
+    "empathy": 0.88,
+    "curiosity": 0.91,
+    "assertiveness": 0.63,
+    "playfulness": 0.77,
+    "formality": 0.21,
+    "values": ["honesty"],
+    "interests": ["music"],
+    "speech_style": "warm",
+    "boundaries": ["no medical advice"],
+    "temperament": "calm"
+  },
+  "configuration": {
+    "configuration_version": 1
+  }
+}

@@ -1,0 +1,33 @@
+﻿## main...origin/main
+ M .github/workflows/gate-0-baseline.yml
+ M .gitignore
+ M ACCEPTANCE_TESTS.md
+ M ARCHITECTURE.md
+ M BUILD_PLAN.md
+ M DECISIONS.md
+ M PRIVACY.md
+ M README.md
+ M SECURITY.md
+ M backend/README.md
+ M core/README.md
+ M docs/adr/README.md
+ M docs/runbooks/environments.md
+ M scripts/check-baseline.ps1
+ M scripts/check-baseline.sh
+ M tests/README.md
+?? .github/workflows/gate-1-identity.yml
+?? backend/__init__.py
+?? backend/identity/
+?? core/__init__.py
+?? core/contracts/
+?? core/identity/
+?? docs/adr/001-core-language-for-identity-contracts.md
+?? docs/evidence/gate-1/
+?? docs/evidence/point-01/
+?? pytest.ini
+?? requirements-dev.txt
+?? scripts/check-identity-contracts.ps1
+?? scripts/check-identity-contracts.sh
+?? tests/identity/
+7ac0437c91a8eabf084bc8289e47116fe17927c1
+7ac0437 Close Gate 0 repository governance baseline

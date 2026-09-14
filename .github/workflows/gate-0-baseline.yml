@@ -1,4 +1,4 @@
-# Gate 0: repository baseline (no product tests)
+# Repository baseline (docs, layout, secrets). Product identity tests are gate-1-identity.yml.
 name: gate-0-baseline
 
 on:

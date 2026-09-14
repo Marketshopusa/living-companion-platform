@@ -1,0 +1,10 @@
+﻿============================= test session starts =============================
+platform win32 -- Python 3.10.6, pytest-9.1.1, pluggy-1.6.0
+rootdir: C:\Users\synth\Documents\living-companion-platform
+configfile: pytest.ini
+plugins: anyio-4.14.2
+collected 21 items
+
+tests\identity\test_identity_contracts.py .....................          [100%]
+
+============================= 21 passed in 0.07s ==============================

@@ -1,0 +1,19 @@
+# Gate 1: Companion Core identity contracts
+name: gate-1-identity
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  identity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Make identity script executable
+        run: chmod +x scripts/check-identity-contracts.sh
+      - name: Run Gate 1 identity contract check
+        run: scripts/check-identity-contracts.sh

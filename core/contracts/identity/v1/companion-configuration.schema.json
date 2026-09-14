@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://living-companion.local/contracts/identity/v1/companion-configuration",
+  "title": "CompanionConfiguration",
+  "description": "Allowlisted initial Companion preferences. Not a User Model and not a language engine.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["configuration_version"],
+  "properties": {
+    "configuration_version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "declared_locale": {
+      "type": "string",
+      "description": "BCP 47-like locale code stored as config only.",
+      "pattern": "^[a-z]{2}(-[A-Z]{2})?$"
+    }
+  }
+}

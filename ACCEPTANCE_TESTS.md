@@ -41,19 +41,37 @@ Must pass:
 
 All automated checks green; manual checks recorded; master spec unmodified; [BUILD_PLAN.md](BUILD_PLAN.md) updated.
 
-## Gate 1 — Companion Core identity contracts (do not start until Gate 0 PASS + human approval)
+## Gate 1 — Companion Core identity contracts
 
-### Scope (future)
+### Scope
 
-- Versioned Companion identity schema (immutable vs mutable).
-- Persist a fictional test Companion with a unique ID independent of any device.
-- Two simulated clients read the same ID and receive the same identity.
-- Cross-tenant read denied.
-- No UI, avatar, paid LLM, wardrobe, or world.
+- Versioned Companion identity schema (immutable vs mutable) in `core/contracts/identity/v1/`.
+- Persist a fictional test Companion with a unique `companion_id` independent of any device.
+- Two simulated clients read the same ID and receive the same canonical identity.
+- Cross-tenant read returns `forbidden`. Unknown id within tenant returns `not_found`.
+- No UI, avatar, paid LLM, wardrobe, or world. No identity models under `apps/`.
 
-### Evidence (future)
+### Automated
 
-`docs/evidence/point-01/`
+From repository root:
+
+1. `git diff -- MASTER_BUILD_SPECIFICATION.md` (must be empty).
+2. `scripts/check-baseline.ps1` or `scripts/check-baseline.sh`.
+3. `scripts/check-identity-contracts.ps1` or `scripts/check-identity-contracts.sh` (pytest under `tests/identity`).
+
+### Manual
+
+1. Confirm two simulated clients share Core and are not competing stores.
+2. Confirm `apps/` has no identity implementation.
+3. Confirm LLM text is not accepted as an identity command.
+
+### Evidence
+
+`docs/evidence/gate-1/` and `docs/evidence/point-01/` (identity-contract slice only; Point 01 is not fully PASSed).
+
+### PASS
+
+Automated tests green; isolation and dual-client cases recorded; master spec unmodified; [BUILD_PLAN.md](BUILD_PLAN.md) Gate 1 PASS. Does **not** PASS Points 02–05.
 
 ## Later gates
 
