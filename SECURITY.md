@@ -25,12 +25,20 @@ Account takeover; broken authorization; cross-user memory leakage; prompt inject
 - Age gating architecture; no minors or minor-like sexualization; no unauthorized real-person voice/face cloning
 - Supply-chain: lockfiles and reviewed dependencies once a stack is chosen
 
+## Gate 1 controls that exist now
+
+- JSON Schema validation before persist (`additionalProperties: false`)
+- Server-side `IdentityAccessPolicy`; cross-tenant reads are `forbidden`
+- No LLM identity mutation path (unstructured payloads rejected)
+- Companion documents isolated by `companion_id`
+- Simulated principals only (not OIDC)
+
 ## Gate 0 controls that exist now
 
 - `.gitignore` for secrets and key material
 - `.env.example` with no credentials
 - CI baseline check rejects tracked secret-like filenames
-- No product APIs yet (attack surface is documentation + git only)
+- No product APIs yet beyond in-process identity commands (no HTTP surface)
 
 ## Incident posture
 

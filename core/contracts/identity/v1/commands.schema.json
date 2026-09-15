@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://living-companion.local/contracts/identity/v1/commands",
+  "title": "IdentityCommands",
+  "description": "Only structured commands may mutate or read identity. LLM text is not a command type.",
+  "oneOf": [
+    { "$ref": "#/$defs/CreateCompanion" },
+    { "$ref": "#/$defs/GetCompanion" },
+    { "$ref": "#/$defs/UpdateCompanionConfiguration" },
+    { "$ref": "#/$defs/SetCompanionStatus" }
+  ],
+  "$defs": {
+    "CreateCompanion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["command", "owner_user_id", "display_name", "personality", "configuration"],
+      "properties": {
+        "command": { "const": "CreateCompanion" },
+        "owner_user_id": { "type": "string", "format": "uuid" },
+        "display_name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 80,
+          "pattern": "^[^\\u0000-\\u001F\\u007F]+$"
+        },
+        "age_presentation": { "type": ["string", "null"], "maxLength": 32 },
+        "gender_presentation": { "type": ["string", "null"], "maxLength": 64 },
+        "personality": {
+          "$ref": "https://living-companion.local/contracts/identity/v1/personality-configuration"
+        },
+        "configuration": {
+          "$ref": "https://living-companion.local/contracts/identity/v1/companion-configuration"
+        },
+        "metadata": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "source": { "type": "string", "enum": ["test", "manual", "system"] },
+            "notes": { "type": "string", "maxLength": 256 }
+          }
+        }
+      }
+    },
+    "GetCompanion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["command", "companion_id"],
+      "properties": {
+        "command": { "const": "GetCompanion" },
+        "companion_id": { "type": "string", "format": "uuid" }
+      }
+    },
+    "UpdateCompanionConfiguration": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["command", "companion_id", "expected_config_revision"],
+      "properties": {
+        "command": { "const": "UpdateCompanionConfiguration" },
+        "companion_id": { "type": "string", "format": "uuid" },
+        "expected_config_revision": { "type": "integer", "minimum": 1 },
+        "display_name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 80,
+          "pattern": "^[^\\u0000-\\u001F\\u007F]+$"
+        },
+        "age_presentation": { "type": ["string", "null"], "maxLength": 32 },
+        "gender_presentation": { "type": ["string", "null"], "maxLength": 64 },
+        "personality": {
+          "$ref": "https://living-companion.local/contracts/identity/v1/personality-configuration"
+        },
+        "configuration": {
+          "$ref": "https://living-companion.local/contracts/identity/v1/companion-configuration"
+        },
+        "metadata": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "source": { "type": "string", "enum": ["test", "manual", "system"] },
+            "notes": { "type": "string", "maxLength": 256 }
+          }
+        }
+      }
+    },
+    "SetCompanionStatus": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["command", "companion_id", "expected_config_revision", "status"],
+      "properties": {
+        "command": { "const": "SetCompanionStatus" },
+        "companion_id": { "type": "string", "format": "uuid" },
+        "expected_config_revision": { "type": "integer", "minimum": 1 },
+        "status": { "type": "string", "enum": ["active", "disabled", "archived"] }
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://living-companion.local/contracts/identity/v1/personality-configuration",
+  "title": "DeclarativePersonalityConfiguration",
+  "description": "Versioned personality parameters as data. Not a Personality Engine and not a prompt.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "personality_config_version",
+    "humor",
+    "empathy",
+    "curiosity",
+    "assertiveness",
+    "playfulness",
+    "formality",
+    "values",
+    "interests",
+    "speech_style",
+    "boundaries",
+    "temperament"
+  ],
+  "properties": {
+    "personality_config_version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "humor": { "type": "number", "minimum": 0, "maximum": 1 },
+    "empathy": { "type": "number", "minimum": 0, "maximum": 1 },
+    "curiosity": { "type": "number", "minimum": 0, "maximum": 1 },
+    "assertiveness": { "type": "number", "minimum": 0, "maximum": 1 },
+    "playfulness": { "type": "number", "minimum": 0, "maximum": 1 },
+    "formality": { "type": "number", "minimum": 0, "maximum": 1 },
+    "values": {
+      "type": "array",
+      "maxItems": 16,
+      "items": { "type": "string", "minLength": 1, "maxLength": 64 }
+    },
+    "interests": {
+      "type": "array",
+      "maxItems": 16,
+      "items": { "type": "string", "minLength": 1, "maxLength": 64 }
+    },
+    "speech_style": { "type": "string", "minLength": 1, "maxLength": 256 },
+    "boundaries": {
+      "type": "array",
+      "maxItems": 16,
+      "items": { "type": "string", "minLength": 1, "maxLength": 128 }
+    },
+    "temperament": { "type": "string", "minLength": 1, "maxLength": 128 }
+  }
+}

@@ -64,18 +64,20 @@ if (Test-Path -LiteralPath ".env" -PathType Leaf) {
   Fail-Msg "FAIL: .env present in workspace (must stay gitignored and uncommitted)"
 }
 
+# Gate 0 forbade all product source. After Gate 1, core/backend identity code is allowed.
+# Client and AI trees must still not grow identity/product implementations.
 $exts = "*.ts","*.tsx","*.py","*.go","*.rs","*.cs","*.java","*.kt","*.swift"
 $hits = @()
-foreach ($dir in @("core","backend","ai","apps")) {
+foreach ($dir in @("ai","apps")) {
   if (Test-Path $dir) {
     $hits += Get-ChildItem -Path $dir -Recurse -File -Include $exts -ErrorAction SilentlyContinue
   }
 }
 if ($hits.Count -gt 0) {
-  Fail-Msg "FAIL: product source found during Gate 0:"
+  Fail-Msg "FAIL: product source found under ai/ or apps/ (clients must not fork identity):"
   $hits | ForEach-Object { Write-Output $_.FullName }
 } else {
-  Write-Output "OK: no product source under core/backend/ai/apps"
+  Write-Output "OK: no product source under ai/apps (core/backend identity code is allowed)"
 }
 
 if ($Fail -ne 0) {

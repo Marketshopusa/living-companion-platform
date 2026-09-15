@@ -18,8 +18,8 @@ Do not build 15 companions first.
 
 | Gate | Description | Status | Owner | Branch | Commit SHA | Tests | Evidence | Blocker | Timestamp (UTC) |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 0 | Repository governance baseline | PASS | Primary Engineering Agent | main | pending commit | scripts/check-baseline.ps1 | docs/evidence/gate-0/README.md | none | 2026-09-14 |
-| 1 | Companion Core identity contracts (Point 01 intent) | NOT_STARTED | â€” | â€” | â€” | â€” | docs/evidence/point-01/ | Gate 0 must PASS; human approval | â€” |
+| 0 | Repository governance baseline | PASS | Primary Engineering Agent | main | 7ac0437 | scripts/check-baseline.ps1 | docs/evidence/gate-0/README.md | none | 2026-09-14 |
+| 1 | Companion Core identity contracts (Point 01 intent) | PASS | Primary Engineering Agent | main | pending commit | scripts/check-identity-contracts.ps1 | docs/evidence/gate-1/; docs/evidence/point-01/ | none | 2026-09-14 |
 
 ## Spec points 00â€“70
 
@@ -28,7 +28,7 @@ All points below inherit the spec Definition of Done. None are started in Gate 0
 | Point | Name | Status | Dependencies | Evidence |
 | --- | --- | --- | --- | --- |
 | 00 | Absolute project rules | NOT_STARTED | â€” | docs/evidence/point-00/ |
-| 01 | Product and master architecture / Companion Core | NOT_STARTED | Gate 0, 00 | docs/evidence/point-01/ |
+| 01 | Product and master architecture / Companion Core | NOT_STARTED | Gate 0, 00 | docs/evidence/point-01/ (Gate 1 identity-contract slice only; point not fully PASS) |
 | 02 | Multiplatform architecture | NOT_STARTED | 01 | docs/evidence/point-02/ |
 | 03 | Persistent character identity | NOT_STARTED | 01 | docs/evidence/point-03/ |
 | 04 | Personality engine | NOT_STARTED | 03 | docs/evidence/point-04/ |
@@ -109,7 +109,7 @@ All points below inherit the spec Definition of Done. None are started in Gate 0
 | Reference Home / rooms | NOT_STARTED | Before extra scenes (cafe/beach/city) |
 | Agency / Autonomous Life | NOT_STARTED | Bounded, interruptible, policy-controlled |
 
-## Next allowed work after Gate 0 PASS
+## Next allowed work after Gate 1 PASS
 
-Stop. Wait for human review. Then Gate 1 only (identity contracts, no UI/3D/paid providers).
+Stop for human review. Do not start Personality Engine, User Model, memory, UI, 3D, or paid providers until the next gate is approved.
 

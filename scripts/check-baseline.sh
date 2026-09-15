@@ -69,13 +69,13 @@ if [[ -f .env ]]; then
   FAIL=1
 fi
 
-product_hits="$(find core backend ai apps -type f \( -name '*.ts' -o -name '*.tsx' -o -name '*.py' -o -name '*.go' -o -name '*.rs' -o -name '*.cs' -o -name '*.java' -o -name '*.kt' -o -name '*.swift' \) 2>/dev/null || true)"
+product_hits="$(find ai apps -type f \( -name '*.ts' -o -name '*.tsx' -o -name '*.py' -o -name '*.go' -o -name '*.rs' -o -name '*.cs' -o -name '*.java' -o -name '*.kt' -o -name '*.swift' \) 2>/dev/null || true)"
 if [[ -n "$product_hits" ]]; then
-  echo "FAIL: product source found during Gate 0:"
+  echo "FAIL: product source found under ai/ or apps/ (clients must not fork identity):"
   echo "$product_hits"
   FAIL=1
 else
-  echo "OK: no product source under core/backend/ai/apps"
+  echo "OK: no product source under ai/apps (core/backend identity code is allowed)"
 fi
 
 if [[ "$FAIL" -ne 0 ]]; then

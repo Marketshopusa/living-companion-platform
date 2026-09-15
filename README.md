@@ -12,7 +12,7 @@ Do not edit `MASTER_BUILD_SPECIFICATION.md` to “simplify” requirements.
 
 ## Current status
 
-**Gate 0 (repository governance)** is the first engineering gate. There is no production Companion Core, UI, 3D runtime, or paid provider integration yet.
+**Gate 1 (Companion Core identity contracts)** is implemented: versioned JSON Schema identity in Companion Core, local in-memory/file persistence, simulated clients, tenant isolation tests. No UI, 3D, or paid providers. See [BUILD_PLAN.md](BUILD_PLAN.md).
 
 See [BUILD_PLAN.md](BUILD_PLAN.md) for gate status.
 
@@ -20,15 +20,15 @@ See [BUILD_PLAN.md](BUILD_PLAN.md) for gate status.
 
 ```text
 apps/             # Future clients: iOS, Android, Windows, macOS, Web, Telegram
-core/             # Companion Core (canonical domain) — not started
-backend/          # APIs, persistence, sync — not started
+core/             # Companion Core — identity contracts (Gate 1); other domains later
+backend/          # Local identity persistence port (memory/file); no cloud DB
 ai/               # Provider adapters and AI configuration — not started
 integrations/     # External channel adapters — not started
 cms/              # Character / AI / asset CMS — not started
 assets/           # Versioned licensed assets — not started
 infrastructure/   # Deploy/env definitions — not started
 scripts/          # Repo checks and tooling
-tests/            # Automated tests — not started
+tests/            # Gate 1 identity tests
 docs/adr/         # Architecture decision records
 docs/evidence/    # Gate evidence
 docs/evaluations/ # AI evaluation artifacts

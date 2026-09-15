@@ -18,14 +18,14 @@ Baseline from [MASTER_BUILD_SPECIFICATION.md](MASTER_BUILD_SPECIFICATION.md) sec
 - Analytics (when added) must be consent-gated and separated from conversation content.
 - Default recommendation until approved otherwise: **do not train models on user data**.
 
-## Isolation tests (future gates)
+## Isolation tests (Gate 1+)
 
-User A facts must never appear in User B context. Companion A memory must never appear in Companion B.
+Gate 1: Tenant B cannot read Tenant A Companion identity. Companion A fields do not appear on Companion B. User Model / memory isolation remains later.
 
 ## AI providers
 
 When adapters exist, vendor processing terms must be reviewed. Local stubs are the Gate 0 / early-dev default ($0).
 
-## Gate 0
+## Gate 1
 
-No user personal data is processed by application code. This repository currently holds specification and governance documents only.
+Identity documents classify fictional Companion config as `OPERATIONAL` and `owner_user_id` / `tenant_id` as `PERSONAL`. No `SECRET` in fixtures. Retention/hard-delete is not implemented (`archived` status only). No training data collection.
