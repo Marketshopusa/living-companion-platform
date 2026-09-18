@@ -2,6 +2,8 @@
 
 Baseline from [MASTER_BUILD_SPECIFICATION.md](MASTER_BUILD_SPECIFICATION.md) sections G, Points 05/42/48/53. Not a completed compliance program.
 
+**User-facing draft pack:** [docs/legal/](docs/legal/README.md) (Privacy Policy, AI disclosure, DSAR, cookies, vendors). Status: `DRAFT — PENDING HUMAN LEGAL COUNSEL` ([ADR-002](docs/adr/002-legal-policy-pack-draft.md)).
+
 ## Data classes
 
 `PUBLIC / OPERATIONAL / PERSONAL / SENSITIVE / SECRET`
@@ -17,6 +19,7 @@ Baseline from [MASTER_BUILD_SPECIFICATION.md](MASTER_BUILD_SPECIFICATION.md) sec
 - Explicit clothing/memory preferences vs inferred: inferred has lower confidence and must be correctable.
 - Analytics (when added) must be consent-gated and separated from conversation content.
 - Default recommendation until approved otherwise: **do not train models on user data**.
+- AI-mediated features require the [AI disclosure](docs/legal/ai-disclosure.md) before first interaction when a client ships.
 
 ## Isolation tests (Gate 1+)
 
@@ -24,7 +27,7 @@ Gate 1: Tenant B cannot read Tenant A Companion identity. Companion A fields do 
 
 ## AI providers
 
-When adapters exist, vendor processing terms must be reviewed. Local stubs are the Gate 0 / early-dev default ($0).
+When adapters exist, vendor processing terms must be reviewed using [docs/legal/vendor-and-subprocessors.md](docs/legal/vendor-and-subprocessors.md). Local stubs are the Gate 0 / early-dev default ($0).
 
 ## Gate 1
 

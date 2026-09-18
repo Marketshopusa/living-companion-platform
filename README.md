@@ -14,6 +14,8 @@ Do not edit `MASTER_BUILD_SPECIFICATION.md` to “simplify” requirements.
 
 **Gate 1 (Companion Core identity contracts)** is implemented: versioned JSON Schema identity in Companion Core, local in-memory/file persistence, simulated clients, tenant isolation tests. No UI, 3D, or paid providers. See [BUILD_PLAN.md](BUILD_PLAN.md).
 
+**Legal / trust pack (draft):** [docs/legal/](docs/legal/README.md) — privacy, terms, acceptable use, AI disclosure, age/safety, anti-fraud. Pending human legal counsel ([ADR-002](docs/adr/002-legal-policy-pack-draft.md)). Not a Points 47–49 PASS.
+
 See [BUILD_PLAN.md](BUILD_PLAN.md) for gate status.
 
 ## Repository layout
@@ -49,6 +51,7 @@ Development starts at **$0** and **local-only**. See [docs/runbooks/environments
 | [ACCEPTANCE_TESTS.md](ACCEPTANCE_TESTS.md) | Gate procedures |
 | [SECURITY.md](SECURITY.md) | Security baseline |
 | [PRIVACY.md](PRIVACY.md) | Privacy baseline |
+| [docs/legal/](docs/legal/README.md) | Draft user-facing legal / AI / anti-fraud policies |
 | [AGENTS.md](AGENTS.md) | Multi-agent working rules |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | How to contribute |
 

@@ -20,13 +20,19 @@ required_files=(
   .env.example
   docs/adr/README.md
   docs/adr/000-no-stack-lock.md
+  docs/adr/002-legal-policy-pack-draft.md
+  docs/legal/README.md
+  docs/legal/ai-disclosure.md
+  docs/legal/privacy-policy.md
+  docs/legal/terms-of-service.md
+  docs/legal/acceptable-use-policy.md
   docs/runbooks/environments.md
   docs/evidence/gate-0/.gitkeep
 )
 
 required_dirs=(
   apps core backend ai integrations cms assets infrastructure scripts tests
-  docs/adr docs/evidence docs/evaluations docs/runbooks
+  docs/adr docs/evidence docs/evaluations docs/runbooks docs/legal
   apps/ios apps/android apps/windows apps/macos apps/web apps/telegram
 )
 

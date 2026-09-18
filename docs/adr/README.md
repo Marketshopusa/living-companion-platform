@@ -8,6 +8,8 @@
 
 Accepted records: [000](000-no-stack-lock.md), [001](001-core-language-for-identity-contracts.md).
 
+Proposed: [002](002-legal-policy-pack-draft.md) — draft legal/trust policy pack (`docs/legal/`).
+
 ## Context
 
 What problem and which master-spec requirement.

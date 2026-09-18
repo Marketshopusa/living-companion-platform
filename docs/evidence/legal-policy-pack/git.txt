@@ -1,0 +1,3 @@
+branch: cursor/legal-policy-pack-966f
+base_at_branch: 390aac86735aed8f1da792165466cf2738703a4d
+note: evidence captured before commit of legal pack; re-run git rev-parse after merge for final SHA
