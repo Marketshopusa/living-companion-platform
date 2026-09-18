@@ -109,7 +109,15 @@ All points below inherit the spec Definition of Done. None are started in Gate 0
 | Reference Home / rooms | NOT_STARTED | Before extra scenes (cafe/beach/city) |
 | Agency / Autonomous Life | NOT_STARTED | Bounded, interruptible, policy-controlled |
 
+## Governance side track (does not replace Gate 1 stop)
+
+| Item | Status | Evidence | Notes |
+| --- | --- | --- | --- |
+| Legal / trust policy pack (ADR-002) | DRAFT / PROPOSED | docs/legal/; docs/evidence/legal-policy-pack/; docs/adr/002-legal-policy-pack-draft.md | User-facing privacy, terms, AUP, AI disclosure, age/safety, anti-fraud. **Not** Points 47–49 PASS. Awaiting human counsel. |
+
 ## Next allowed work after Gate 1 PASS
 
-Stop for human review. Do not start Personality Engine, User Model, memory, UI, 3D, or paid providers until the next gate is approved.
+Stop for human review on product gates. Do not start Personality Engine, User Model, memory, UI, 3D, or paid providers until the next gate is approved.
+
+Allowed in parallel: refine `docs/legal/` drafts and fill placeholders only after human/legal direction; do not publish as final or lock jurisdiction/age/retention without ADR acceptance.
 

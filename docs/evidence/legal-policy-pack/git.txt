@@ -1,0 +1,4 @@
+branch: cursor/legal-policy-pack-966f
+commit: b9b7dff724132c05d2f81906aa0320eca7cea38a
+base_at_branch: 390aac86735aed8f1da792165466cf2738703a4d
+note: legal policy pack draft; ADR-002 proposed

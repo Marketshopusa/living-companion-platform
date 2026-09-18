@@ -32,3 +32,7 @@ Production assets need provenance and license metadata. Do not copy proprietary 
 ## Human approval
 
 Irreversible architecture, cost, privacy, security, legal/licensing, or product decisions need an ADR and a human sign-off. See [DECISIONS.md](DECISIONS.md).
+
+## Legal / AI disclosure drafts
+
+User-facing policy scaffolds live under [docs/legal/](docs/legal/README.md). Keep the `DRAFT` banner until counsel accepts [ADR-002](docs/adr/002-legal-policy-pack-draft.md). Do not remove placeholders by inventing jurisdiction, age vendors, or retention periods. When any client ships AI features, surface [docs/legal/ai-disclosure.md](docs/legal/ai-disclosure.md) before first interaction.

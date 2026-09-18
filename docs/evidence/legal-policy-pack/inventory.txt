@@ -1,0 +1,10 @@
+docs/legal/acceptable-use-policy.md
+docs/legal/ai-disclosure.md
+docs/legal/anti-fraud-and-trust.md
+docs/legal/content-safety-and-age.md
+docs/legal/cookie-and-similar-technologies.md
+docs/legal/data-subject-requests.md
+docs/legal/privacy-policy.md
+docs/legal/README.md
+docs/legal/terms-of-service.md
+docs/legal/vendor-and-subprocessors.md
